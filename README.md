@@ -14,21 +14,21 @@ A similar code as provided in the course assigment was used in order to complete
 <!-- -->
 
 
-makeCacheMatrix <- function(x = matrix()) {
-  s <- NULL
-  #Matrix space is initialized, value s, which will hold
-  #the solution, will be given a null value
-  set <- function(y) {
-    x <<- y
-    s <<- NULL
-  }
-  get <- function() x
-  setsolve <- function(solve) s <<- solve 
-  getsolve <- function() s
-  list(set = set, get = get,
-       setsolve = setsolve,
-       getsolve = getsolve)
-}
+    makeCacheMatrix <- function(x = matrix()) {
+      s <- NULL
+      #Matrix space is initialized, value s, which will hold
+      #the solution, will be given a null value
+      set <- function(y) {
+        x <<- y
+        s <<- NULL
+      }
+      get <- function() x
+      setsolve <- function(solve) s <<- solve 
+      getsolve <- function() s
+      list(set = set, get = get,
+           setsolve = setsolve,
+           getsolve = getsolve)
+    }
 
 The following function calculates the inverse of the special matrix created above. However, first checks if the solution has already done by checking the "null" condition of s and calling the getsolve function. This is done by making using the special environment created by using the <-- function
 
