@@ -44,7 +44,7 @@ The following function calculates the inverse of the special matrix created abov
             m
     }
 
-An example of its use is presented next. First, a random 3x3 matrix is done and injected into a "special" matrix called v. The values of such matrix are presented by the call v$get() and then the solution is presented
+An example of its use is presented next. First, a random 3x3 matrix is done and injected into a "special" matrix called v. The values of such matrix are presented by the call v$get() and then the solution is calculated. The second time that the function is called, R prints the legend "getting cached data" which comes from the calling of the cached solution path in the code.
 
 
     > source("cachematrix.R")
