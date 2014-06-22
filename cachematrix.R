@@ -13,6 +13,7 @@ makeCacheMatrix <- function(x = matrix()) {
     s <<- NULL
   }
   get <- function() x
+  #The equivalent to the setmean and getmean functions are added.
   setsolve <- function(solve) s <<- solve 
   getsolve <- function() s
   list(set = set, get = get,
@@ -20,7 +21,7 @@ makeCacheMatrix <- function(x = matrix()) {
        getsolve = getsolve)
 }
 
-## Write a short comment describing this function
+##  The following function calculates the inverse of the special matrix created above. However, first checks if the solution has already done by checking the "null" condition of s and calling the getsolve function. This is done by making using the special environment created by using the <-- function
 
 cacheSolve <- function(x, ...) {
   s <- x$getsolve()
