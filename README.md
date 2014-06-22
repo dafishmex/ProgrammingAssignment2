@@ -44,3 +44,28 @@ The following function calculates the inverse of the special matrix created abov
             m
     }
 
+An example of its use is presented next. First, a random 3x3 matrix is done and injected into a "special" matrix called v. The values of such matrix are presented by the call v$get() and then the solution is presented
+
+
+    > source("cachematrix.R")
+    > v <-makeCacheMatrix()
+    > bb=replicate(3, rnorm(3))
+    > v$set(bb)
+    > v$get()
+               [,1]       [,2]       [,3]
+    [1,]  0.1311495 -0.5799433  0.4534748
+    [2,] -0.2186122 -1.4223861 -0.4688775
+    [3,]  1.8082266  0.4619648  0.3372725
+    
+    > cacheSolve(v)
+               [,1]       [,2]        [,3]
+    [1,] -0.1714219  0.2639069  0.59736715
+    [2,] -0.5043138 -0.5053869 -0.02452304
+    [3,]  1.6098105 -0.7226576 -0.20412689
+    
+    > cacheSolve(v)
+    getting cached data
+               [,1]       [,2]        [,3]
+    [1,] -0.1714219  0.2639069  0.59736715
+    [2,] -0.5043138 -0.5053869 -0.02452304
+    [3,]  1.6098105 -0.7226576 -0.20412689
